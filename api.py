@@ -1,7 +1,7 @@
 import json
 from flask import Flask, jsonify, request
 
-color = [{"012245":"red"}]
+color = {"012245":"red"}
 
 # creating the instance of our flask application
 app = Flask(__name__)
