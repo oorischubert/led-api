@@ -13,7 +13,7 @@ def downloadRoute0(): #change number for every new route!
     global color
     if(request.method == 'GET'):
         color_key = request.args.get('key')
-        if(color.has_key(color_key)):
+        if(color[color_key] != "null"):
          return jsonify({"color" : color[color_key]}) #returns color from app with code
         else:
             return jsonify({"color":"null"})
