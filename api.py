@@ -28,7 +28,7 @@ def downloadRoute0(): #change number for every new route!
         request_data = request.data
         request_data = json.loads(request_data.decode('utf-8'))
         #color[color_key] = request_data['color']
-        db.set('color_key',request_data['color'])
+        db.set(color_key,request_data['color'])
         return ' '
 
 
