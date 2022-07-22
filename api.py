@@ -16,12 +16,12 @@ def downloadRoute0(): #change number for every new route!
     if(request.method == 'GET'):
         color_key = request.args.get('key')
         value = db.get(color_key)
-        if value != None:
-            return jsonify({"color" : value})
+       # if value != None:
+        return jsonify({"color" : value})
       #  if color_key in color:
        #  return jsonify({"color" : color[color_key]}) #returns color from app with code
-        else:
-            return jsonify({"color":"null"})
+        #else:
+         #   return jsonify({"color":"null"})
 
     elif(request.method == 'POST'):
         color_key = request.args.get('key')
