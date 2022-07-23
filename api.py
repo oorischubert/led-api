@@ -30,12 +30,12 @@ def downloadRoute0(): #change number for every new route!
         request_data = request.data
         request_data = json.loads(request_data.decode('utf-8'))
         #color[color_key] = request_data['color']
-        value = db.get(color_key)
-        if(str(value) == "None"):
-            return ' '
-        else: 
-            db.set(color_key,request_data['color'])
-            return ' '
+        #value = db.get(color_key)
+        #if(str(value) == "None"):
+        #   return ' '
+        #else: 
+        db.set(color_key,request_data['color'])
+            #return ' '
 
 
 if __name__ == "__main__":
