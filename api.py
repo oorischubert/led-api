@@ -12,7 +12,7 @@ db=redis.from_url(os.environ['REDISCLOUD_URL'])
 @app.route('/color',methods = ['GET', 'POST'])
 #@cross_origin(maxAge = 3600) #web auth
 def downloadRoute0(): #change number for every new route!
-    global color
+    #global color
     if(request.method == 'GET'):
         color_key = request.args.get('key')
         value = db.get(color_key)
@@ -32,7 +32,7 @@ def downloadRoute0(): #change number for every new route!
         #color[color_key] = request_data['color']
         value = db.get(color_key)
         if(str(value) != "None"):
-            db.set(color_key,request_data['color'])
+            db.set(color_key,request_data) #removed ["color"] key from request data
         return ' '
       
 
