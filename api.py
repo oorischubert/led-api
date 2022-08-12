@@ -32,7 +32,7 @@ def downloadRoute0(): #change number for every new route!
         #color[color_key] = request_data['color']
         value = db.get(color_key)
         if(str(value) != "None"):
-            db.set(color_key,request_data) #removed ["color"] key from request data
+            db.set(color_key,request_data['color']) #original request_data["color"]
         return ' '
       
 
