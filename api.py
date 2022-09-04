@@ -14,25 +14,25 @@ db=redis.from_url(os.environ['REDISCLOUD_URL'])
 def downloadRoute0(): #change number for every new route!
     #global color
     if(request.method == 'GET'):
-        color_key = request.args.get('key')
-        value = db.get(color_key)
+        value_key = request.args.get('key')
+        value = db.get(value_key)
         if (str(value) == "None"):
-            db.set(color_key,'init')
-            value = 'init'
-        return jsonify({"color" : str(value)})
+            db.set(value_key,'L')
+            value = 'L'
+        return jsonify({"value" : str(value)})
       #  if color_key in color:
        #  return jsonify({"color" : color[color_key]}) #returns color from app with code
         #else:
          #   return jsonify({"color":"null"})
 
     elif(request.method == 'POST'):
-        color_key = request.args.get('key')
+        value_key = request.args.get('key')
         request_data = request.data
         request_data = json.loads(request_data.decode('utf-8'))
         #color[color_key] = request_data['color']
-        value = db.get(color_key)
+        value = db.get(value_key)
         if(str(value) != "None"):
-            db.set(color_key,request_data['color']) #original request_data["color"]
+            db.set(value_key,request_data['value']) #original request_data["color"]
         return ' '
       
 
